@@ -3,13 +3,16 @@ import { collection, onSnapshot } from 'firebase/firestore';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect, useState } from 'react';
-import Navbar from './components/NavBar';
-import Contactslist from './components/Contactslist';
-import PageNotFound from './components/PageNotFound';
-import AddAndUpdateContact from './components/AddAndUpdateContact';
+import { lazy, useEffect, useState } from 'react';
 import useDisclouse from './hooks/useDisclouse';
 import Spinner from './components/Spinner';
+
+const Navbar = lazy(() => import('./components/Navbar'));
+const Contactslist = lazy(() => import('./components/Contactslist'));
+const PageNotFound = lazy(() => import('./components/PageNotFound'));
+const AddAndUpdateContact = lazy(
+  () => import('./components/AddAndUpdateContact')
+);
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
