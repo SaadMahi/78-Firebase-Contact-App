@@ -1,4 +1,4 @@
-import Searchinput from './SearchInput';
+import Searchinput from './Searchinput';
 
 const Navbar = ({ onOpen, filterContacts }) => {
   return (
